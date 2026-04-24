@@ -1,7 +1,6 @@
 class Wrap < Formula
   desc "Translate natural language into shell commands"
   homepage "https://github.com/talater/wrap"
-  version "0.0.1"
   license "MIT"
 
   livecheck do
