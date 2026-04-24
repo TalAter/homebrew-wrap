@@ -12,11 +12,11 @@ class Wrap < Formula
   on_macos do
     on_arm do
       url "https://github.com/talater/wrap/releases/download/v#{version}/wrap-aarch64-apple-darwin.tar.gz"
-      sha256 "b6a4f9cbcdfefb753c0e113f567835e88a1ff14da674770216b94b49d306601d"
+      sha256 "b64604cd2fabea2a6f56db1365c3c67f94ed46ba651707432733d6139407df2a"
     end
     on_intel do
       url "https://github.com/talater/wrap/releases/download/v#{version}/wrap-x86_64-apple-darwin.tar.gz"
-      sha256 "fc58079c2df7d37c810b2e5673a9108c3055dfa5e01a1bffb62ededa1d6f79d6"
+      sha256 "2efda4f408266b93017349dd597dd4dbd8ea6d0cad22e5fab9e37b42acb43f10"
     end
   end
 
