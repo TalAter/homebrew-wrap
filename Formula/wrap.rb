@@ -4,8 +4,8 @@ class Wrap < Formula
   # Class-level url is a syntax-validation placeholder — brew readall on Linux
   # rejects formulae with no visible url. `depends_on :macos` blocks install
   # there, and the `on_macos` block overrides this url on the supported path.
-  url "https://github.com/talater/wrap/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "92bf02bbd5050461839ea5a11d7b3c83e7cc457679817ac12eba7594ad78b26d"
+  url "https://github.com/talater/wrap/archive/refs/tags/v0.0.3.tar.gz"
+  sha256 "cf31b9008991e7c071c851f9179eb388b933f761bdca664d451367f9a3b17319"
   license "MIT"
 
   livecheck do
@@ -17,12 +17,12 @@ class Wrap < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/talater/wrap/releases/download/v0.0.2/wrap-aarch64-apple-darwin.tar.gz"
-      sha256 "dcde1c175032fdb5baa7ca8d276871865e449e8cd173166370b6bdf35fbc0b8b"
+      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-aarch64-apple-darwin.tar.gz"
+      sha256 "f96b0a450055578dda59e312863daa4ba83d83e2726fb8c5f10083caac01328c"
     end
     on_intel do
-      url "https://github.com/talater/wrap/releases/download/v0.0.2/wrap-x86_64-apple-darwin.tar.gz"
-      sha256 "907dde687d68b359051f38af027574a15afd2198bb97546a3e227c9fd9764b4b"
+      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-x86_64-apple-darwin.tar.gz"
+      sha256 "9d365d2152e71427467640cd02954cfae4b863ec4faefd26b80c54d2f6f1eecd"
     end
   end
 
