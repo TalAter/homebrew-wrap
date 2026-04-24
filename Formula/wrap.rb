@@ -8,14 +8,16 @@ class Wrap < Formula
     strategy :github_latest
   end
 
+  depends_on :macos
+
   on_macos do
     on_arm do
       url "https://github.com/talater/wrap/releases/download/v0.0.2/wrap-aarch64-apple-darwin.tar.gz"
       sha256 "dcde1c175032fdb5baa7ca8d276871865e449e8cd173166370b6bdf35fbc0b8b"
     end
     on_intel do
-      url "https://github.com/talater/wrap/releases/download/v0.0.1/wrap-x86_64-apple-darwin.tar.gz"
-      sha256 "2efda4f408266b93017349dd597dd4dbd8ea6d0cad22e5fab9e37b42acb43f10"
+      url "https://github.com/talater/wrap/releases/download/v0.0.2/wrap-x86_64-apple-darwin.tar.gz"
+      sha256 "907dde687d68b359051f38af027574a15afd2198bb97546a3e227c9fd9764b4b"
     end
   end
 
