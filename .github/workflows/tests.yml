@@ -6,19 +6,18 @@ on:
       - main
   pull_request:
 
+# We ship prebuilt, ad-hoc codesigned macOS binaries (not source-built), so
+# `brew test-bot --only-formulae` / `--build-bottle` is the wrong tool — it
+# tries to relocate paths inside the Mach-O binary and invalidates the
+# signature, which then SIGKILLs when `generate_completions_from_executable`
+# tries to fork it. Syntax + audit is the value for this tap's CI; the
+# install path is exercised by every real `brew install talater/wrap/wrap`.
+
 jobs:
   test-bot:
-    strategy:
-      matrix:
-        os: [ macos-15-intel, macos-26 ]
-        include:
-          - os: ubuntu-latest
-            container: ghcr.io/homebrew/brew:main
-    runs-on: ${{ matrix.os }}
-    container: ${{ matrix.container }}
+    runs-on: ubuntu-latest
+    container: ghcr.io/homebrew/brew:main
     permissions:
-      actions: read
-      checks: read
       contents: read
       pull-requests: read
     steps:
@@ -29,23 +28,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Homebrew Bundler RubyGems
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ matrix.os }}-rubygems-
+          key: rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: rubygems-
 
       - run: brew test-bot --only-cleanup-before
-
       - run: brew test-bot --only-setup
-
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae
-        if: github.event_name == 'pull_request'
-
-      - name: Upload bottles as artifact
-        if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: bottles_${{ matrix.os }}
-          path: '*.bottle.*'
