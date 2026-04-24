@@ -1,6 +1,11 @@
 class Wrap < Formula
   desc "Translate natural language into shell commands"
   homepage "https://github.com/talater/wrap"
+  # Class-level url is a syntax-validation placeholder — brew readall on Linux
+  # rejects formulae with no visible url. `depends_on :macos` blocks install
+  # there, and the `on_macos` block overrides this url on the supported path.
+  url "https://github.com/talater/wrap/archive/refs/tags/v0.0.2.tar.gz"
+  sha256 "92bf02bbd5050461839ea5a11d7b3c83e7cc457679817ac12eba7594ad78b26d"
   license "MIT"
 
   livecheck do
