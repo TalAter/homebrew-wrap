@@ -10,23 +10,23 @@ class Wrap < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-aarch64-apple-darwin.tar.gz"
-      sha256 "f96b0a450055578dda59e312863daa4ba83d83e2726fb8c5f10083caac01328c"
+      url "https://github.com/talater/wrap/releases/download/v0.0.4/wrap-aarch64-apple-darwin.tar.gz"
+      sha256 "addb0274dbe0e3c398f2534a5d9fdcf06ed0d5ddc9dc45c30313faa500e05a9d"
     end
     on_intel do
-      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-x86_64-apple-darwin.tar.gz"
-      sha256 "9d365d2152e71427467640cd02954cfae4b863ec4faefd26b80c54d2f6f1eecd"
+      url "https://github.com/talater/wrap/releases/download/v0.0.4/wrap-x86_64-apple-darwin.tar.gz"
+      sha256 "1c4256e7596f7d6f62a5f49d22c6c559f9862e3fe36f51036d10560e9ff3e736"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "bad28a4bbefb6648fed9f666d1777bf813f3b252b98d5e78d0975bed8c716932"
+      url "https://github.com/talater/wrap/releases/download/v0.0.4/wrap-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "fc9673e49516d4f744b03c0e0136cc489dd80b4c17e3fc0c5b8733c8cb0191d3"
     end
     on_intel do
-      url "https://github.com/talater/wrap/releases/download/v0.0.3/wrap-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "cf777533e34257ce7b2ae767cfe24e6959628c22920ca5b16a65e1065c6d260d"
+      url "https://github.com/talater/wrap/releases/download/v0.0.4/wrap-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e2bfae13ba32114ba926fe2010a0dd84130e7d8ff2a2451669a6f1721279d828"
     end
   end
 
